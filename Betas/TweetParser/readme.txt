@@ -5,6 +5,8 @@ Tweet Parser v1.0a by gjtDigital
 
 ---Features to be added:
 
+--Posting tweets / status updates
+
 --Storing tweets in a SQL database
 
 --Generate analytic charts based on keyword usage from db
