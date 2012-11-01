@@ -1,4 +1,4 @@
-Tweet Parser v1.0 by gjtDigital
+Tweet Parser v1.0a by gjtDigital
 
 --Searches tweets based on a keyword by user
 
