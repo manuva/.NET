@@ -27,8 +27,7 @@ namespace TweetParser
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-
+            lblResults.Content = pbLoader.Value + " Results displayed";
             
         }
 
@@ -53,6 +52,9 @@ namespace TweetParser
         //on user click of button1
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            pbLoader.Value = 0;
+            pbLoader.Minimum = 0;
+            pbLoader.Maximum = 100;
             //make sure our label is hidden
             lblErrorText.Visibility = Visibility.Hidden;
             //validate our box when user clicks
@@ -60,7 +62,8 @@ namespace TweetParser
             if (errorFlag == false)
             {
                 string userKeyword;
-                userKeyword = txtTwitterSearch.Text;
+                userKeyword = txtTwitterSearch.Text; //putting textbox as a var
+
 
                 //try to get results from twitter and list
                 //display our cursor working so the user doesn't think
@@ -69,6 +72,9 @@ namespace TweetParser
                 {
                     Cursor = Cursors.Wait;
                     List<TweetInfo> searchResults = twitterScrape.GetSearchResults(userKeyword);
+                    lblResults.Content = searchResults.Count + " of " + pbLoader.Maximum.ToString() + " Tweets Displayed";
+                    pbLoader.Value = searchResults.Count;
+                    //display tweets
                     lstTweets.ItemsSource = searchResults;
                 }
                     //cursor is arrow
@@ -77,7 +83,7 @@ namespace TweetParser
                     Cursor = Cursors.Arrow;
                 }
             }
-                //this could probably be cleaned up, however
+                //this could probably be executed differently, however
                 //display error if no text entered
             else
             {

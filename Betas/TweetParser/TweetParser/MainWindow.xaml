@@ -57,6 +57,7 @@
                         </ListBox.ItemTemplate>
              
                     </ListBox>
+                    <!--error label-->
                     <Label x:Name="lblErrorText" 
                            Content="Please enter keyword or hashtag" 
                            HorizontalAlignment="Left" 
@@ -67,8 +68,18 @@
                            Foreground="Red" 
                            Visibility="Hidden"
                            />
+                    <metro:ProgressBar Height="8" Margin="8,306,8,0" Name="pbLoader" VerticalAlignment="Top" />
+                    <Label Height="26" HorizontalAlignment="Left" Margin="4,284,0,0" Name="lblResults" VerticalAlignment="Top" Width="216" Foreground="#FF017BCD" />
+                    <!--end error label-->
                 </Grid>
             </TabItem>
+            <!--Tweet Tab-->
+            <TabItem Header="Tweet" Name="tabTweet">
+                <Grid>
+                    
+                </Grid>
+            </TabItem>
+            <!--end tweet tab-->
         </TabControl>
         
     </Grid>
