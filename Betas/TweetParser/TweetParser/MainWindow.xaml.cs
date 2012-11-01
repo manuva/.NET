@@ -51,8 +51,9 @@ namespace TweetParser
 
 
         //on user click of button1
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            //make sure our label is hidden
             lblErrorText.Visibility = Visibility.Hidden;
             //validate our box when user clicks
             ValidateBox(txtTwitterSearch);
@@ -61,24 +62,28 @@ namespace TweetParser
                 string userKeyword;
                 userKeyword = txtTwitterSearch.Text;
 
+                //try to get results from twitter and list
+                //display our cursor working so the user doesn't think
+                //that nothing is going on
                 try
                 {
                     Cursor = Cursors.Wait;
                     List<TweetInfo> searchResults = twitterScrape.GetSearchResults(userKeyword);
                     lstTweets.ItemsSource = searchResults;
                 }
+                    //cursor is arrow
                 finally
                 {
                     Cursor = Cursors.Arrow;
                 }
             }
+                //this could probably be cleaned up, however
+                //display error if no text entered
             else
             {
                 lblErrorText.Visibility = Visibility.Visible;
                 errorFlag = true;
             }
-
-
         } //btn click event
 
     } //Main window  

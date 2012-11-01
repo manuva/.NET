@@ -14,9 +14,9 @@
         <TabControl HorizontalAlignment="Stretch" Name="tabControl1" VerticalAlignment="Top" Width="auto" Height="444" Margin="0,2,0,0">
             <TabItem Header="Search Twitter" Name="tabItem1">
                 <Grid Visibility="Visible"><!--tab item grid-->
-                    <Label Content="Search Twitter" Height="28" HorizontalAlignment="Left" Margin="8,339,0,0" Name="label1" VerticalAlignment="Top" Width="100" Foreground="White" />
-                    <Button Content="Search" Height="28" HorizontalAlignment="Left" Margin="244,340,0,0" Name="button1" VerticalAlignment="Top" Width="71" Padding="0" Click="button1_Click" />
-                    <TextBox Height="23" HorizontalAlignment="Left" Margin="100,340,0,0" Name="txtTwitterSearch" VerticalAlignment="Top" Width="120" />
+                    <Label Content="Search Twitter" Height="28" HorizontalAlignment="Left" Margin="8,339,0,0" Name="label1" VerticalAlignment="Top" Width="115" Foreground="White" FontSize="15" />
+                    <Button Content="Search" Height="28" HorizontalAlignment="Left" Margin="291,340,0,0" Name="btnSearch" VerticalAlignment="Top" Width="71" Padding="0" Click="btnSearch_Click" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,340,0,0" Name="txtTwitterSearch" VerticalAlignment="Top" Width="130" FontSize="15" />
 
                     <ListBox x:Name="lstTweets" Margin="8,8,8,109" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListBox.ItemTemplate>
@@ -57,12 +57,17 @@
                         </ListBox.ItemTemplate>
              
                     </ListBox>
-                    <Label x:Name="lblErrorText" Content="Please enter something to search for" HorizontalAlignment="Left" Margin="337,251,0,0" VerticalAlignment="Top" Width="205" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="lblErrorText" 
+                           Content="Please enter keyword or hashtag" 
+                           HorizontalAlignment="Left" 
+                           Margin="394,338,0,0"
+                           VerticalAlignment="Top" 
+                           Width="264" 
+                           FontSize="15"
+                           Foreground="Red" 
+                           Visibility="Hidden"
+                           />
                 </Grid>
-            </TabItem>
-            <TabItem Header="Tweet DB" Name="tabTweetDB">
-                
-                
             </TabItem>
         </TabControl>
         
