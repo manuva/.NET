@@ -16,7 +16,8 @@ namespace TweetParser
             {
                 //store the search string in url var
                 //change rpp to 100 or less to display the amount of results
-                string url = string.Format("http://search.twitter.com/search.atom?lang=en&q={0}&rpp=100", HttpUtility.UrlEncode(searchString));
+                int rpp = 100;
+                string url = string.Format("http://search.twitter.com/search.atom?lang=en&q={0}&rpp="+rpp, HttpUtility.UrlEncode(searchString));
 
                 WebClient client = new WebClient();
 
