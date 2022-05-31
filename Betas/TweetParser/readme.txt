@@ -1,4 +1,4 @@
-Tweet Parser v1.0a by gjtDigital
+Tweet Parser v1.0a by manuva
 
 Searches tweets based on a keyword by user. This app uses the elysium wpf framework for design.
 
